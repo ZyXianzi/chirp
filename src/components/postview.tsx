@@ -2,6 +2,9 @@ import { type RouterOutputs } from "~/utils/api";
 import Image from "next/image";
 import Link from "next/link";
 import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+
+dayjs.extend(relativeTime);
 
 type PostWithAuthor = RouterOutputs["posts"]["getAll"][number];
 export const PostView = ({ post, author }: PostWithAuthor) => {
